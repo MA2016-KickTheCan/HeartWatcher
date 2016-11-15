@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F750E1971DDAFC4700A24385 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F750E1961DDAFC4700A24385 /* CoreLocation.framework */; };
+		F750E19F1DDB3BEB00A24385 /* RadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750E19E1DDB3BEB00A24385 /* RadarView.swift */; };
+		F750E1A31DDB545200A24385 /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750E1A21DDB545200A24385 /* HeartView.swift */; };
+		F750E1A51DDB578F00A24385 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = F750E1A41DDB578F00A24385 /* heart.png */; };
+		F77A5F5E1DDAF3EC0027CFD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F5D1DDAF3EC0027CFD3 /* AppDelegate.swift */; };
+		F77A5F601DDAF3EC0027CFD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F5F1DDAF3EC0027CFD3 /* ViewController.swift */; };
+		F77A5F631DDAF3EC0027CFD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77A5F611DDAF3EC0027CFD3 /* Main.storyboard */; };
+		F77A5F651DDAF3EC0027CFD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77A5F641DDAF3EC0027CFD3 /* Assets.xcassets */; };
+		F77A5F681DDAF3EC0027CFD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77A5F661DDAF3EC0027CFD3 /* LaunchScreen.storyboard */; };
+		F77A5F731DDAF3EC0027CFD3 /* KickTheCanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F721DDAF3EC0027CFD3 /* KickTheCanTests.swift */; };
+		F77A5F7E1DDAF3EC0027CFD3 /* KickTheCanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F7D1DDAF3EC0027CFD3 /* KickTheCanUITests.swift */; };
+		F77A5F8D1DDAF4C00027CFD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F77A5F8C1DDAF4C00027CFD3 /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F77A5F6F1DDAF3EC0027CFD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F77A5F521DDAF3EC0027CFD3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F77A5F591DDAF3EC0027CFD3;
+			remoteInfo = KickTheCan;
+		};
+		F77A5F7A1DDAF3EC0027CFD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F77A5F521DDAF3EC0027CFD3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F77A5F591DDAF3EC0027CFD3;
+			remoteInfo = KickTheCan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F750E1961DDAFC4700A24385 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F750E19E1DDB3BEB00A24385 /* RadarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarView.swift; sourceTree = "<group>"; };
+		F750E1A21DDB545200A24385 /* HeartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
+		F750E1A41DDB578F00A24385 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		F77A5F5A1DDAF3EC0027CFD3 /* KickTheCan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KickTheCan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77A5F5D1DDAF3EC0027CFD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F77A5F5F1DDAF3EC0027CFD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F77A5F621DDAF3EC0027CFD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F77A5F641DDAF3EC0027CFD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F77A5F671DDAF3EC0027CFD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F77A5F691DDAF3EC0027CFD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77A5F6E1DDAF3EC0027CFD3 /* KickTheCanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KickTheCanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77A5F721DDAF3EC0027CFD3 /* KickTheCanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickTheCanTests.swift; sourceTree = "<group>"; };
+		F77A5F741DDAF3EC0027CFD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77A5F791DDAF3EC0027CFD3 /* KickTheCanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KickTheCanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77A5F7D1DDAF3EC0027CFD3 /* KickTheCanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickTheCanUITests.swift; sourceTree = "<group>"; };
+		F77A5F7F1DDAF3EC0027CFD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77A5F8C1DDAF4C00027CFD3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F77A5F571DDAF3EC0027CFD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F750E1971DDAFC4700A24385 /* CoreLocation.framework in Frameworks */,
+				F77A5F8D1DDAF4C00027CFD3 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77A5F6B1DDAF3EC0027CFD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77A5F761DDAF3EC0027CFD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F77A5F511DDAF3EC0027CFD3 = {
+			isa = PBXGroup;
+			children = (
+				F77A5F5C1DDAF3EC0027CFD3 /* KickTheCan */,
+				F77A5F711DDAF3EC0027CFD3 /* KickTheCanTests */,
+				F77A5F7C1DDAF3EC0027CFD3 /* KickTheCanUITests */,
+				F77A5F5B1DDAF3EC0027CFD3 /* Products */,
+				F77A5F8B1DDAF4BF0027CFD3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F77A5F5B1DDAF3EC0027CFD3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F77A5F5A1DDAF3EC0027CFD3 /* KickTheCan.app */,
+				F77A5F6E1DDAF3EC0027CFD3 /* KickTheCanTests.xctest */,
+				F77A5F791DDAF3EC0027CFD3 /* KickTheCanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F77A5F5C1DDAF3EC0027CFD3 /* KickTheCan */ = {
+			isa = PBXGroup;
+			children = (
+				F77A5F5D1DDAF3EC0027CFD3 /* AppDelegate.swift */,
+				F77A5F5F1DDAF3EC0027CFD3 /* ViewController.swift */,
+				F77A5F611DDAF3EC0027CFD3 /* Main.storyboard */,
+				F750E19E1DDB3BEB00A24385 /* RadarView.swift */,
+				F750E1A21DDB545200A24385 /* HeartView.swift */,
+				F77A5F641DDAF3EC0027CFD3 /* Assets.xcassets */,
+				F77A5F661DDAF3EC0027CFD3 /* LaunchScreen.storyboard */,
+				F77A5F691DDAF3EC0027CFD3 /* Info.plist */,
+				F750E1A41DDB578F00A24385 /* heart.png */,
+			);
+			path = KickTheCan;
+			sourceTree = "<group>";
+		};
+		F77A5F711DDAF3EC0027CFD3 /* KickTheCanTests */ = {
+			isa = PBXGroup;
+			children = (
+				F77A5F721DDAF3EC0027CFD3 /* KickTheCanTests.swift */,
+				F77A5F741DDAF3EC0027CFD3 /* Info.plist */,
+			);
+			path = KickTheCanTests;
+			sourceTree = "<group>";
+		};
+		F77A5F7C1DDAF3EC0027CFD3 /* KickTheCanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F77A5F7D1DDAF3EC0027CFD3 /* KickTheCanUITests.swift */,
+				F77A5F7F1DDAF3EC0027CFD3 /* Info.plist */,
+			);
+			path = KickTheCanUITests;
+			sourceTree = "<group>";
+		};
+		F77A5F8B1DDAF4BF0027CFD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F750E1961DDAFC4700A24385 /* CoreLocation.framework */,
+				F77A5F8C1DDAF4C00027CFD3 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F77A5F591DDAF3EC0027CFD3 /* KickTheCan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77A5F821DDAF3EC0027CFD3 /* Build configuration list for PBXNativeTarget "KickTheCan" */;
+			buildPhases = (
+				F77A5F561DDAF3EC0027CFD3 /* Sources */,
+				F77A5F571DDAF3EC0027CFD3 /* Frameworks */,
+				F77A5F581DDAF3EC0027CFD3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KickTheCan;
+			productName = KickTheCan;
+			productReference = F77A5F5A1DDAF3EC0027CFD3 /* KickTheCan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F77A5F6D1DDAF3EC0027CFD3 /* KickTheCanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77A5F851DDAF3EC0027CFD3 /* Build configuration list for PBXNativeTarget "KickTheCanTests" */;
+			buildPhases = (
+				F77A5F6A1DDAF3EC0027CFD3 /* Sources */,
+				F77A5F6B1DDAF3EC0027CFD3 /* Frameworks */,
+				F77A5F6C1DDAF3EC0027CFD3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F77A5F701DDAF3EC0027CFD3 /* PBXTargetDependency */,
+			);
+			name = KickTheCanTests;
+			productName = KickTheCanTests;
+			productReference = F77A5F6E1DDAF3EC0027CFD3 /* KickTheCanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F77A5F781DDAF3EC0027CFD3 /* KickTheCanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77A5F881DDAF3EC0027CFD3 /* Build configuration list for PBXNativeTarget "KickTheCanUITests" */;
+			buildPhases = (
+				F77A5F751DDAF3EC0027CFD3 /* Sources */,
+				F77A5F761DDAF3EC0027CFD3 /* Frameworks */,
+				F77A5F771DDAF3EC0027CFD3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F77A5F7B1DDAF3EC0027CFD3 /* PBXTargetDependency */,
+			);
+			name = KickTheCanUITests;
+			productName = KickTheCanUITests;
+			productReference = F77A5F791DDAF3EC0027CFD3 /* KickTheCanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F77A5F521DDAF3EC0027CFD3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = AtsuyaSato;
+				TargetAttributes = {
+					F77A5F591DDAF3EC0027CFD3 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = DEQGLB9PU4;
+						ProvisioningStyle = Automatic;
+					};
+					F77A5F6D1DDAF3EC0027CFD3 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = DEQGLB9PU4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F77A5F591DDAF3EC0027CFD3;
+					};
+					F77A5F781DDAF3EC0027CFD3 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = DEQGLB9PU4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F77A5F591DDAF3EC0027CFD3;
+					};
+				};
+			};
+			buildConfigurationList = F77A5F551DDAF3EC0027CFD3 /* Build configuration list for PBXProject "KickTheCan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F77A5F511DDAF3EC0027CFD3;
+			productRefGroup = F77A5F5B1DDAF3EC0027CFD3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F77A5F591DDAF3EC0027CFD3 /* KickTheCan */,
+				F77A5F6D1DDAF3EC0027CFD3 /* KickTheCanTests */,
+				F77A5F781DDAF3EC0027CFD3 /* KickTheCanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F77A5F581DDAF3EC0027CFD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F750E1A51DDB578F00A24385 /* heart.png in Resources */,
+				F77A5F681DDAF3EC0027CFD3 /* LaunchScreen.storyboard in Resources */,
+				F77A5F651DDAF3EC0027CFD3 /* Assets.xcassets in Resources */,
+				F77A5F631DDAF3EC0027CFD3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77A5F6C1DDAF3EC0027CFD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77A5F771DDAF3EC0027CFD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F77A5F561DDAF3EC0027CFD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77A5F601DDAF3EC0027CFD3 /* ViewController.swift in Sources */,
+				F750E1A31DDB545200A24385 /* HeartView.swift in Sources */,
+				F750E19F1DDB3BEB00A24385 /* RadarView.swift in Sources */,
+				F77A5F5E1DDAF3EC0027CFD3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77A5F6A1DDAF3EC0027CFD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77A5F731DDAF3EC0027CFD3 /* KickTheCanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77A5F751DDAF3EC0027CFD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77A5F7E1DDAF3EC0027CFD3 /* KickTheCanUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F77A5F701DDAF3EC0027CFD3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F77A5F591DDAF3EC0027CFD3 /* KickTheCan */;
+			targetProxy = F77A5F6F1DDAF3EC0027CFD3 /* PBXContainerItemProxy */;
+		};
+		F77A5F7B1DDAF3EC0027CFD3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F77A5F591DDAF3EC0027CFD3 /* KickTheCan */;
+			targetProxy = F77A5F7A1DDAF3EC0027CFD3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F77A5F611DDAF3EC0027CFD3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F77A5F621DDAF3EC0027CFD3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F77A5F661DDAF3EC0027CFD3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F77A5F671DDAF3EC0027CFD3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F77A5F801DDAF3EC0027CFD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F77A5F811DDAF3EC0027CFD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F77A5F831DDAF3EC0027CFD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DEQGLB9PU4;
+				INFOPLIST_FILE = KickTheCan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.natmark.KickTheCan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F77A5F841DDAF3EC0027CFD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DEQGLB9PU4;
+				INFOPLIST_FILE = KickTheCan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.natmark.KickTheCan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F77A5F861DDAF3EC0027CFD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = DEQGLB9PU4;
+				INFOPLIST_FILE = KickTheCanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.natmark.KickTheCanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KickTheCan.app/KickTheCan";
+			};
+			name = Debug;
+		};
+		F77A5F871DDAF3EC0027CFD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = DEQGLB9PU4;
+				INFOPLIST_FILE = KickTheCanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.natmark.KickTheCanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KickTheCan.app/KickTheCan";
+			};
+			name = Release;
+		};
+		F77A5F891DDAF3EC0027CFD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = DEQGLB9PU4;
+				INFOPLIST_FILE = KickTheCanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.natmark.KickTheCanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = KickTheCan;
+			};
+			name = Debug;
+		};
+		F77A5F8A1DDAF3EC0027CFD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = DEQGLB9PU4;
+				INFOPLIST_FILE = KickTheCanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.natmark.KickTheCanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = KickTheCan;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F77A5F551DDAF3EC0027CFD3 /* Build configuration list for PBXProject "KickTheCan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77A5F801DDAF3EC0027CFD3 /* Debug */,
+				F77A5F811DDAF3EC0027CFD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F77A5F821DDAF3EC0027CFD3 /* Build configuration list for PBXNativeTarget "KickTheCan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77A5F831DDAF3EC0027CFD3 /* Debug */,
+				F77A5F841DDAF3EC0027CFD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F77A5F851DDAF3EC0027CFD3 /* Build configuration list for PBXNativeTarget "KickTheCanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77A5F861DDAF3EC0027CFD3 /* Debug */,
+				F77A5F871DDAF3EC0027CFD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F77A5F881DDAF3EC0027CFD3 /* Build configuration list for PBXNativeTarget "KickTheCanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77A5F891DDAF3EC0027CFD3 /* Debug */,
+				F77A5F8A1DDAF3EC0027CFD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F77A5F521DDAF3EC0027CFD3 /* Project object */;
+}
