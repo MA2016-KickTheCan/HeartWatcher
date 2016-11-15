@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>hack2.xcscheme</key>
+		<key>KickTheCan.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>D59695B61DAB1E4F0028EB0E</key>
+		<key>F77A5F591DDAF3EC0027CFD3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D59695CA1DAB1E4F0028EB0E</key>
+		<key>F77A5F6D1DDAF3EC0027CFD3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D59695D51DAB1E4F0028EB0E</key>
+		<key>F77A5F781DDAF3EC0027CFD3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

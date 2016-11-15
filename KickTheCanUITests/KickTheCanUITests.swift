@@ -1,14 +1,14 @@
 //
-//  hack2UITests.swift
-//  hack2UITests
+//  KickTheCanUITests.swift
+//  KickTheCanUITests
 //
-//  Created by pwg on 2016/10/10.
-//  Copyright © 2016年 pwg. All rights reserved.
+//  Created by AtsuyaSato on 2016/11/15.
+//  Copyright © 2016年 AtsuyaSato. All rights reserved.
 //
 
 import XCTest
 
-class hack2UITests: XCTestCase {
+class KickTheCanUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

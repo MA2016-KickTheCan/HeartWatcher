@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D59695B61DAB1E4F0028EB0E"
-               BuildableName = "hack2.app"
-               BlueprintName = "hack2"
-               ReferencedContainer = "container:hack2.xcodeproj">
+               BlueprintIdentifier = "F77A5F591DDAF3EC0027CFD3"
+               BuildableName = "KickTheCan.app"
+               BlueprintName = "KickTheCan"
+               ReferencedContainer = "container:KickTheCan.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D59695CA1DAB1E4F0028EB0E"
-               BuildableName = "hack2Tests.xctest"
-               BlueprintName = "hack2Tests"
-               ReferencedContainer = "container:hack2.xcodeproj">
+               BlueprintIdentifier = "F77A5F6D1DDAF3EC0027CFD3"
+               BuildableName = "KickTheCanTests.xctest"
+               BlueprintName = "KickTheCanTests"
+               ReferencedContainer = "container:KickTheCan.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D59695D51DAB1E4F0028EB0E"
-               BuildableName = "hack2UITests.xctest"
-               BlueprintName = "hack2UITests"
-               ReferencedContainer = "container:hack2.xcodeproj">
+               BlueprintIdentifier = "F77A5F781DDAF3EC0027CFD3"
+               BuildableName = "KickTheCanUITests.xctest"
+               BlueprintName = "KickTheCanUITests"
+               ReferencedContainer = "container:KickTheCan.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D59695B61DAB1E4F0028EB0E"
-            BuildableName = "hack2.app"
-            BlueprintName = "hack2"
-            ReferencedContainer = "container:hack2.xcodeproj">
+            BlueprintIdentifier = "F77A5F591DDAF3EC0027CFD3"
+            BuildableName = "KickTheCan.app"
+            BlueprintName = "KickTheCan"
+            ReferencedContainer = "container:KickTheCan.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D59695B61DAB1E4F0028EB0E"
-            BuildableName = "hack2.app"
-            BlueprintName = "hack2"
-            ReferencedContainer = "container:hack2.xcodeproj">
+            BlueprintIdentifier = "F77A5F591DDAF3EC0027CFD3"
+            BuildableName = "KickTheCan.app"
+            BlueprintName = "KickTheCan"
+            ReferencedContainer = "container:KickTheCan.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D59695B61DAB1E4F0028EB0E"
-            BuildableName = "hack2.app"
-            BlueprintName = "hack2"
-            ReferencedContainer = "container:hack2.xcodeproj">
+            BlueprintIdentifier = "F77A5F591DDAF3EC0027CFD3"
+            BuildableName = "KickTheCan.app"
+            BlueprintName = "KickTheCan"
+            ReferencedContainer = "container:KickTheCan.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
