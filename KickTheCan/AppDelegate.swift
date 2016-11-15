@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  hack2
+//  KickTheCan
 //
-//  Created by pwg on 2016/10/10.
-//  Copyright © 2016年 pwg. All rights reserved.
+//  Created by AtsuyaSato on 2016/11/15.
+//  Copyright © 2016年 AtsuyaSato. All rights reserved.
 //
 
 import UIKit
