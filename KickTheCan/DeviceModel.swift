@@ -12,14 +12,17 @@ enum ServerError : Error {
     case NotFound
     case Unconnect
 }
-
-class DeviceModel: NSObject {
-    //Sphero
-    let DRIVE_CONTROLLER_SCOPE = "driveController"
-    let LIGHT_SCOPE = "light"
-    //Mio
-    let HEALTH_SCOPE = "health"
+enum DeviceType{
+    case Sphero
+    case Mio
+}
+enum ScopeType : String{
+    case DriveController = "driveController"
+    case Light = "light"
+    case Health = "health"
     
+}
+class DeviceModel: NSObject {
     var data = DeviceData()
     
     class var sharedInstance : DeviceModel {
@@ -28,9 +31,10 @@ class DeviceModel: NSObject {
         }
         return Singleton.instance
     }
-    ///スフィロ探索用関数
+    ///デバイス探索用関数
+    ///- parameter device: SpheroかMioか
     ///- parameter  completion: CallBack用引数
-    func findSphero(completion: ((Array<Dictionary<String, String>>) -> Void)?) {
+    func findDevice(device: DeviceType, completion: ((Array<Dictionary<String, String>>) -> Void)?) {
         if let server = self.data.serverIP {
             
             let URL = NSURL(string: "\("http://" + server + ":4035/gotapi/servicediscovery")")
@@ -55,9 +59,18 @@ class DeviceModel: NSObject {
                     
                     for service in services! {
                         if(service["online"] as! Bool == true){
-                            if((service["scopes"] as! Array<String>).contains(self.DRIVE_CONTROLLER_SCOPE) && (service["scopes"] as! Array<String>).contains(self.LIGHT_SCOPE)){
-                                //DriveControllerAPIとLightAPIの両方を提供するデバイス
-                                result.append(["name":service["name"] as! String,"id":service["id"] as! String])
+                            if(device == DeviceType.Sphero){
+                                if((service["scopes"] as! Array<String>).contains(ScopeType.DriveController.rawValue) && (service["scopes"] as! Array<String>).contains(ScopeType.Light.rawValue)){
+                                    //DriveControllerAPIとLightAPIの両方を提供するデバイス
+                                    result.append(["name":service["name"] as! String,"id":service["id"] as! String])
+                                }
+                            }else if(device == DeviceType.Mio){
+                                if(service["online"] as! Bool == true){
+                                    if((service["scopes"] as! Array<String>).contains(ScopeType.Health.rawValue)){
+                                        //HealthAPIを提供するデバイス
+                                        result.append(["name":service["name"] as! String,"id":service["id"] as! String])
+                                    }
+                                }
                             }
                         }
                     }
@@ -69,57 +82,16 @@ class DeviceModel: NSObject {
             task.resume()
         }
     }
-    ///缶蹴りで使用するSpheroのセット
-    ///- parameter  serviceId: 使用するSpheroのServiceId
-    func setSphero(serviceId : String){
-        self.data.SpheroServiceID = serviceId
-    }
-    ///ミオ探索用関数
-    ///- parameter  completion: CallBack用引数
-    func findMio(completion: ((Array<Dictionary<String, String>>) -> Void)?) {
-        if let server = self.data.serverIP {
-            
-            let URL = NSURL(string: "\("http://" + server + ":4035/gotapi/servicediscovery")")
-            let req = NSURLRequest(url: URL as! URL)
-            
-            let configuration = URLSessionConfiguration.default
-            configuration.timeoutIntervalForRequest = 10
-            configuration.timeoutIntervalForResource = 60
-            
-            let session = URLSession(configuration: configuration, delegate:nil, delegateQueue:OperationQueue.main)
-            
-            var result:Array<Dictionary<String, String>> = []
-            
-            let task = session.dataTask(with: req as URLRequest, completionHandler: {
-                (data, response, error) -> Void in
-                do {
-                    if (data == nil) {
-                        throw error!
-                    }
-                    let json = try JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions.allowFragments ) as! Dictionary<String, Any>
-                    let services = json["services"] as! Array<Dictionary<String, Any>>!
-                    for service in services! {
-                        if(service["online"] as! Bool == true){
-                            if((service["scopes"] as! Array<String>).contains(self.HEALTH_SCOPE)){
-                                //DriveControllerAPIとLightAPIの両方を提供するデバイス
-                                result.append(["name":service["name"] as! String,"id":service["id"] as! String])
-                            }
-                        }
-                    }
-                    completion!(result)
-                } catch {
-                    
-                }
-            })
-            task.resume()
+    ///缶蹴りで使用するデバイスのセット
+    ///- parameter device: SpheroかMioか
+    ///- parameter  serviceId: 使用するデバイスのServiceId
+    func setDevice(device : DeviceType, serviceId : String){
+        if(device == DeviceType.Sphero){
+            self.data.SpheroServiceID = serviceId
+        }else if(device == DeviceType.Mio){
+            self.data.MioServiceID = serviceId
         }
     }
-    ///缶蹴りで使用するMioのセット
-    ///- parameter  serviceId: 使用するMioのServiceId
-    func setMio(serviceId : String){
-        self.data.MioServiceID = serviceId
-    }
-    
     /// サーバを探す
     ///- parameter completion: CallBack用引数
     func findServer(completion: ((Error?) -> Void)?) {
