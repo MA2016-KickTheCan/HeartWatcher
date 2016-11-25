@@ -16,10 +16,10 @@ class SpheroSelectViewController: UIViewController,UITableViewDelegate,UITableVi
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        DeviceModel.sharedInstance.findSphero(completion: { (result: Array<Dictionary<String, String>>) in
+        DeviceModel.sharedInstance.findDevice(device: DeviceType.Sphero, completion: { (result: Array<Dictionary<String, String>>) in
             self.devices = result
             self.tableView.reloadData()
-        })        // Do any additional setup after loading the view.
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,14 +34,14 @@ class SpheroSelectViewController: UIViewController,UITableViewDelegate,UITableVi
     }
     
     @IBAction func ReloadDevice(_ sender: Any) {
-        DeviceModel.sharedInstance.findSphero(completion: { (result: Array<Dictionary<String, String>>) in
+        DeviceModel.sharedInstance.findDevice(device: DeviceType.Sphero, completion: { (result: Array<Dictionary<String, String>>) in
             self.devices = result
             self.tableView.reloadData()
         })
     }
     
     func tableView(_ table: UITableView, didSelectRowAt indexPath:IndexPath) {
-        DeviceModel.sharedInstance.setSphero(serviceId: devices[indexPath.row]["id"]!)
+        DeviceModel.sharedInstance.setDevice(device: DeviceType.Sphero, serviceId: devices[indexPath.row]["id"]!)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.navigationController?.pushViewController(storyboard.instantiateViewController(withIdentifier: "MioSelectViewController"), animated: true)
     }
