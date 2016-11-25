@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class RadarView: UIView {
+class RadarView: UIView,CLLocationManagerDelegate {
     var rad = 0
+    let locationManager:CLLocationManager = CLLocationManager()
+
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         //描画の中心点
@@ -58,5 +62,25 @@ class RadarView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            break
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let newLocation = locations.last else {
+            return
+        }
+        let centerCoordinate = newLocation.coordinate
+        let coordinateSpan = MKCoordinateSpanMake(0.005, 0.005)
+        let newRegion = MKCoordinateRegionMake(centerCoordinate, coordinateSpan)
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }
