@@ -22,5 +22,6 @@ Podfile.lock
 
 # others
 *.swp
+UserInterfaceState.xcuserstate
 !.gitkeep
 .DS_Store
