@@ -17,16 +17,7 @@ class ViewController: UIViewController {
 //
         let heartView = HeartView(frame: CGRect(x: 0, y: self.view.frame.size.width / 2, width: self.view.frame.size.width, height: self.view.frame.size.width / 2))
         self.view.addSubview(heartView)
-        
-        DeviceModel.sharedInstance.findServer(completion:{ (error) -> Void in
-            if error != nil{
-                print(error!)
-            }else{
-                //サーバに接続完了
-                
-            }
-        })
-    
+            
     }
     
     override func didReceiveMemoryWarning() {

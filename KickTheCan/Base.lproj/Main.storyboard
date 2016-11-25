@@ -7,13 +7,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--次世代型缶蹴り-->
         <scene sceneID="v1n-Ya-jU7">
             <objects>
-                <viewController id="pGP-8E-4mN" sceneMemberID="viewController">
+                <viewController id="pGP-8E-4mN" customClass="TitleViewController" customModule="KickTheCan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bPN-kl-Jb6"/>
                         <viewControllerLayoutGuide type="bottom" id="aXw-03-ytU"/>
@@ -21,8 +22,33 @@
                     <view key="view" contentMode="scaleToFill" id="hAz-r1-BKE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2R-oO-sOs">
+                                <rect key="frame" x="36" y="577" width="303" height="30"/>
+                                <color key="backgroundColor" red="0.28235294117647058" green="0.45882352941176469" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vrr-OA-Q45"/>
+                                </constraints>
+                                <state key="normal" title="サーバへ接続">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="connect2server:" destination="pGP-8E-4mN" eventType="touchUpInside" id="GrD-bM-nKA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.10378562750000001" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c2R-oO-sOs" firstAttribute="leading" secondItem="hAz-r1-BKE" secondAttribute="leadingMargin" constant="20" id="TFh-Rg-ytH"/>
+                            <constraint firstItem="aXw-03-ytU" firstAttribute="top" secondItem="c2R-oO-sOs" secondAttribute="bottom" constant="60" id="iQN-TL-tMc"/>
+                            <constraint firstItem="c2R-oO-sOs" firstAttribute="centerX" secondItem="hAz-r1-BKE" secondAttribute="centerX" id="wan-cu-1d1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c2R-oO-sOs" secondAttribute="trailing" constant="20" id="xju-Df-b39"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="次世代型缶蹴り" id="BRu-HD-8AM"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="connectServer" id="sxi-Lv-Ymq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ut9-mV-hHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -37,11 +63,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe4-Oq-azR">
-                                <rect key="frame" x="0.0" y="439" width="375" height="104"/>
+                                <rect key="frame" x="0.0" y="503" width="375" height="104"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fe4-Oq-azR" secondAttribute="height" multiplier="375:104" id="XuN-1l-NoN"/>
                                 </constraints>
@@ -66,8 +92,9 @@
         <!--Navigation Controller-->
         <scene sceneID="dx9-0e-ljM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y6L-Is-Kp6" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="y6L-Is-Kp6" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="FDZ-VG-AHN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -79,7 +106,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DR7-54-v7l"/>
+                        <segue destination="pGP-8E-4mN" kind="relationship" relationship="rootViewController" id="B6M-Kr-s4P"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enU-MI-mlM" userLabel="First Responder" sceneMemberID="firstResponder"/>

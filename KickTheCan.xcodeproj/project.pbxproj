@@ -21,6 +21,7 @@
 		F77A5F731DDAF3EC0027CFD3 /* KickTheCanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F721DDAF3EC0027CFD3 /* KickTheCanTests.swift */; };
 		F77A5F7E1DDAF3EC0027CFD3 /* KickTheCanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F7D1DDAF3EC0027CFD3 /* KickTheCanUITests.swift */; };
 		F77A5F8D1DDAF4C00027CFD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F77A5F8C1DDAF4C00027CFD3 /* MapKit.framework */; };
+		F7C0EB081DE8093000D7699F /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0EB071DE8093000D7699F /* TitleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		F77A5F7D1DDAF3EC0027CFD3 /* KickTheCanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickTheCanUITests.swift; sourceTree = "<group>"; };
 		F77A5F7F1DDAF3EC0027CFD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F77A5F8C1DDAF4C00027CFD3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F7C0EB071DE8093000D7699F /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				F75926321DE7E8BC003134BC /* KickTheCan-Bridging-Header.h */,
 				F77A5F5D1DDAF3EC0027CFD3 /* AppDelegate.swift */,
 				F77A5F5F1DDAF3EC0027CFD3 /* ViewController.swift */,
+				F7C0EB071DE8093000D7699F /* TitleViewController.swift */,
 				F75926331DE7FA1C003134BC /* DeviceData.swift */,
 				F75926371DE7FB1E003134BC /* DeviceModel.swift */,
 				F77A5F611DDAF3EC0027CFD3 /* Main.storyboard */,
@@ -299,6 +302,7 @@
 				F75926341DE7FA1C003134BC /* DeviceData.swift in Sources */,
 				F75926381DE7FB1E003134BC /* DeviceModel.swift in Sources */,
 				F77A5F601DDAF3EC0027CFD3 /* ViewController.swift in Sources */,
+				F7C0EB081DE8093000D7699F /* TitleViewController.swift in Sources */,
 				F750E1A31DDB545200A24385 /* HeartView.swift in Sources */,
 				F750E19F1DDB3BEB00A24385 /* RadarView.swift in Sources */,
 				F77A5F5E1DDAF3EC0027CFD3 /* AppDelegate.swift in Sources */,

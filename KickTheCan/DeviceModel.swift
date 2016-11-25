@@ -31,6 +31,9 @@ class DeviceModel: NSObject {
         let req = NSURLRequest(url: URL as! URL)
         
         let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 5
+        configuration.timeoutIntervalForResource = 20
+        
         let session = URLSession(configuration: configuration, delegate:nil, delegateQueue:OperationQueue.main)
         
         let task = session.dataTask(with: req as URLRequest, completionHandler: {
@@ -57,30 +60,27 @@ class DeviceModel: NSObject {
             print(address) //自身のアドレス
             let network = address[address.startIndex..<address.index(address.endIndex, offsetBy: -3)]
 
+            var count = 0
+            
             //サブネットマスク/24(255.255.255.0)として同一LANに存在するサーバを探索
             for i in 1..<255 {
-                isServerRunning(IP: network + String(i), completion:{ (isRunning,IP) -> Void in
+                self.isServerRunning(IP: network + String(i), completion:{ (isRunning,IP) -> Void in
+                    count+=1
                     if isRunning {
                         // okの処理
                         print(IP + " connected")
                         self.data.serverIP = IP
                         completion!(nil)
-                        DispatchQueue.main.sync {
-                            isFound = true
-                        }
+                        isFound = true
                     }else{
-                        if(i == 254 && !isFound){
-                            completion!(ServerError.NotFound)
-                        }
+                        print(count)
+                        if(count==254 && !isFound){completion!(ServerError.NotFound)}
                     }
                 })
             }
         }else{
             print("wi-fiに接続されていません")
             completion!(ServerError.Unconnect)
-        }
-        if(isFound){
-            completion!(ServerError.NotFound)
         }
     }
     
