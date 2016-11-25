@@ -11,6 +11,8 @@
 		F750E19F1DDB3BEB00A24385 /* RadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750E19E1DDB3BEB00A24385 /* RadarView.swift */; };
 		F750E1A31DDB545200A24385 /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750E1A21DDB545200A24385 /* HeartView.swift */; };
 		F750E1A51DDB578F00A24385 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = F750E1A41DDB578F00A24385 /* heart.png */; };
+		F75926341DE7FA1C003134BC /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75926331DE7FA1C003134BC /* DeviceData.swift */; };
+		F75926381DE7FB1E003134BC /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75926371DE7FB1E003134BC /* DeviceModel.swift */; };
 		F77A5F5E1DDAF3EC0027CFD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F5D1DDAF3EC0027CFD3 /* AppDelegate.swift */; };
 		F77A5F601DDAF3EC0027CFD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F5F1DDAF3EC0027CFD3 /* ViewController.swift */; };
 		F77A5F631DDAF3EC0027CFD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77A5F611DDAF3EC0027CFD3 /* Main.storyboard */; };
@@ -43,6 +45,9 @@
 		F750E19E1DDB3BEB00A24385 /* RadarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarView.swift; sourceTree = "<group>"; };
 		F750E1A21DDB545200A24385 /* HeartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
 		F750E1A41DDB578F00A24385 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		F75926321DE7E8BC003134BC /* KickTheCan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KickTheCan-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		F75926331DE7FA1C003134BC /* DeviceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
+		F75926371DE7FB1E003134BC /* DeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 		F77A5F5A1DDAF3EC0027CFD3 /* KickTheCan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KickTheCan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77A5F5D1DDAF3EC0027CFD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F77A5F5F1DDAF3EC0027CFD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,8 +115,11 @@
 		F77A5F5C1DDAF3EC0027CFD3 /* KickTheCan */ = {
 			isa = PBXGroup;
 			children = (
+				F75926321DE7E8BC003134BC /* KickTheCan-Bridging-Header.h */,
 				F77A5F5D1DDAF3EC0027CFD3 /* AppDelegate.swift */,
 				F77A5F5F1DDAF3EC0027CFD3 /* ViewController.swift */,
+				F75926331DE7FA1C003134BC /* DeviceData.swift */,
+				F75926371DE7FB1E003134BC /* DeviceModel.swift */,
 				F77A5F611DDAF3EC0027CFD3 /* Main.storyboard */,
 				F750E19E1DDB3BEB00A24385 /* RadarView.swift */,
 				F750E1A21DDB545200A24385 /* HeartView.swift */,
@@ -288,6 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F75926341DE7FA1C003134BC /* DeviceData.swift in Sources */,
+				F75926381DE7FB1E003134BC /* DeviceModel.swift in Sources */,
 				F77A5F601DDAF3EC0027CFD3 /* ViewController.swift in Sources */,
 				F750E1A31DDB545200A24385 /* HeartView.swift in Sources */,
 				F750E19F1DDB3BEB00A24385 /* RadarView.swift in Sources */,
@@ -446,6 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.natmark.KickTheCan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PRODUCT)/KickTheCan-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -459,6 +470,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.natmark.KickTheCan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PRODUCT)/KickTheCan-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
