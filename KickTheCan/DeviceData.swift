@@ -9,13 +9,12 @@
 import UIKit
 
 class DeviceData: NSObject {
-    var serverIP:String = ""
-    var SpheroServiceID:String = ""
-    var MioServiceID:String = ""
+    var serverIP:String? = nil
+    var SpheroServiceID:String? = nil
+    var MioServiceID:String? = nil
     
     override init() {
         super.init()
-        self.setDevice(device: ["serverIP":"","SpheroServiceID":"","MioServiceID":""])
     }
     
     func setDevice(device:Dictionary<String,String>){

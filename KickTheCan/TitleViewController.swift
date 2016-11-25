@@ -46,7 +46,8 @@ class TitleViewController: UIViewController {
             }else{
                 self.alertLabel.isHidden = true
                 //サーバに接続完了
-                self.performSegue(withIdentifier: "connectServer", sender: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                self.navigationController?.pushViewController(storyboard.instantiateViewController(withIdentifier: "SpheroSelectViewController"), animated: true)
             }
         })
     }

@@ -14,6 +14,12 @@ enum ServerError : Error {
 }
 
 class DeviceModel: NSObject {
+    //Sphero
+    let DRIVE_CONTROLLER_SCOPE = "driveController"
+    let LIGHT_SCOPE = "light"
+    //Mio
+    let HEALTH_SCOPE = "health"
+    
     var data = DeviceData()
     
     class var sharedInstance : DeviceModel {
@@ -21,6 +27,131 @@ class DeviceModel: NSObject {
             static var instance = DeviceModel()
         }
         return Singleton.instance
+    }
+    ///スフィロ探索用関数
+    ///- parameter  completion: CallBack用引数
+    func findSphero(completion: ((Array<Dictionary<String, String>>) -> Void)?) {
+        if let server = self.data.serverIP {
+            
+            let URL = NSURL(string: "\("http://" + server + ":4035/gotapi/servicediscovery")")
+            let req = NSURLRequest(url: URL as! URL)
+            
+            let configuration = URLSessionConfiguration.default
+            configuration.timeoutIntervalForRequest = 10
+            configuration.timeoutIntervalForResource = 60
+            
+            let session = URLSession(configuration: configuration, delegate:nil, delegateQueue:OperationQueue.main)
+            
+            var result:Array<Dictionary<String, String>> = []
+
+            let task = session.dataTask(with: req as URLRequest, completionHandler: {
+                (data, response, error) -> Void in
+                do {
+                    if (data == nil) {
+                        throw error!
+                    }
+                    let json = try JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions.allowFragments ) as! Dictionary<String, Any>
+                    let services = json["services"] as! Array<Dictionary<String, Any>>!
+                    
+                    for service in services! {
+                        if(service["online"] as! Bool == true){
+                            if((service["scopes"] as! Array<String>).contains(self.DRIVE_CONTROLLER_SCOPE) && (service["scopes"] as! Array<String>).contains(self.LIGHT_SCOPE)){
+                                //DriveControllerAPIとLightAPIの両方を提供するデバイス
+                                result.append(["name":service["name"] as! String,"id":service["id"] as! String])
+                            }
+                        }
+                    }
+                    completion!(result)
+                } catch {
+                    
+                }
+            })
+            task.resume()
+        }
+    }
+    ///缶蹴りで使用するSpheroのセット
+    ///- parameter  serviceId: 使用するSpheroのServiceId
+    func setSphero(serviceId : String){
+        self.data.SpheroServiceID = serviceId
+    }
+    ///ミオ探索用関数
+    ///- parameter  completion: CallBack用引数
+    func findMio(completion: ((Array<Dictionary<String, String>>) -> Void)?) {
+        if let server = self.data.serverIP {
+            
+            let URL = NSURL(string: "\("http://" + server + ":4035/gotapi/servicediscovery")")
+            let req = NSURLRequest(url: URL as! URL)
+            
+            let configuration = URLSessionConfiguration.default
+            configuration.timeoutIntervalForRequest = 10
+            configuration.timeoutIntervalForResource = 60
+            
+            let session = URLSession(configuration: configuration, delegate:nil, delegateQueue:OperationQueue.main)
+            
+            var result:Array<Dictionary<String, String>> = []
+            
+            let task = session.dataTask(with: req as URLRequest, completionHandler: {
+                (data, response, error) -> Void in
+                do {
+                    if (data == nil) {
+                        throw error!
+                    }
+                    let json = try JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions.allowFragments ) as! Dictionary<String, Any>
+                    let services = json["services"] as! Array<Dictionary<String, Any>>!
+                    for service in services! {
+                        if(service["online"] as! Bool == true){
+                            if((service["scopes"] as! Array<String>).contains(self.HEALTH_SCOPE)){
+                                //DriveControllerAPIとLightAPIの両方を提供するデバイス
+                                result.append(["name":service["name"] as! String,"id":service["id"] as! String])
+                            }
+                        }
+                    }
+                    completion!(result)
+                } catch {
+                    
+                }
+            })
+            task.resume()
+        }
+    }
+    ///缶蹴りで使用するMioのセット
+    ///- parameter  serviceId: 使用するMioのServiceId
+    func setMio(serviceId : String){
+        self.data.MioServiceID = serviceId
+    }
+    
+    /// サーバを探す
+    ///- parameter completion: CallBack用引数
+    func findServer(completion: ((Error?) -> Void)?) {
+        var isFound = false
+        if let address = getWiFiAddress() {
+            print(address) //自身のアドレス
+            
+            let arr = address.components(separatedBy: ".")
+            
+            //第3オクテットまでを結合
+            let network = arr[0..<3].joined(separator: ".")
+            var count = 0
+            
+            //サブネットマスク/24(255.255.255.0)として同一LANに存在するサーバを探索
+            for i in 1..<255 {
+                self.isServerRunning(IP: network + "." + String(i), completion:{ (isRunning,IP) -> Void in
+                    count+=1
+                    if isRunning {
+                        // okの処理
+                        print(IP + " connected")
+                        self.data.serverIP = IP
+                        completion!(nil)
+                        isFound = true
+                    }else{
+                        if(count==254 && !isFound){completion!(ServerError.NotFound)}
+                    }
+                })
+            }
+        }else{
+            print("wi-fiに接続されていません")
+            completion!(ServerError.Unconnect)
+        }
     }
     
     ///対象のサーバが動作しているかどうか
@@ -31,8 +162,8 @@ class DeviceModel: NSObject {
         let req = NSURLRequest(url: URL as! URL)
         
         let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 5
-        configuration.timeoutIntervalForResource = 20
+        configuration.timeoutIntervalForRequest = 10
+        configuration.timeoutIntervalForResource = 60
         
         let session = URLSession(configuration: configuration, delegate:nil, delegateQueue:OperationQueue.main)
         
@@ -52,38 +183,7 @@ class DeviceModel: NSObject {
         })
         task.resume()
     }
-    
-    /// サーバを探す
-    func findServer(completion: ((Error?) -> Void)?) {
-        var isFound = false
-        if let address = getWiFiAddress() {
-            print(address) //自身のアドレス
-            let network = address[address.startIndex..<address.index(address.endIndex, offsetBy: -3)]
 
-            var count = 0
-            
-            //サブネットマスク/24(255.255.255.0)として同一LANに存在するサーバを探索
-            for i in 1..<255 {
-                self.isServerRunning(IP: network + String(i), completion:{ (isRunning,IP) -> Void in
-                    count+=1
-                    if isRunning {
-                        // okの処理
-                        print(IP + " connected")
-                        self.data.serverIP = IP
-                        completion!(nil)
-                        isFound = true
-                    }else{
-                        print(count)
-                        if(count==254 && !isFound){completion!(ServerError.NotFound)}
-                    }
-                })
-            }
-        }else{
-            print("wi-fiに接続されていません")
-            completion!(ServerError.Unconnect)
-        }
-    }
-    
     /// IPアドレスを返す
     /// - returns: IPアドレス(IPv4)
     private func getWiFiAddress() -> String? {

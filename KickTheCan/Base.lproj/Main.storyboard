@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--次世代型缶蹴り-->
+        <!--トップ-->
         <scene sceneID="v1n-Ya-jU7">
             <objects>
-                <viewController id="pGP-8E-4mN" customClass="TitleViewController" customModule="KickTheCan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TitleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pGP-8E-4mN" customClass="TitleViewController" customModule="KickTheCan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bPN-kl-Jb6"/>
                         <viewControllerLayoutGuide type="bottom" id="aXw-03-ytU"/>
@@ -77,21 +77,73 @@
                             <constraint firstAttribute="trailingMargin" secondItem="c2R-oO-sOs" secondAttribute="trailing" constant="20" id="xju-Df-b39"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="次世代型缶蹴り" id="BRu-HD-8AM"/>
+                    <navigationItem key="navigationItem" title="トップ" id="BRu-HD-8AM"/>
                     <connections>
                         <outlet property="activityIndicator" destination="VqU-rW-TYe" id="pIF-qn-bKe"/>
                         <outlet property="alertLabel" destination="I2Z-HC-GkZ" id="BJD-kS-92V"/>
-                        <segue destination="BYZ-38-t0r" kind="push" identifier="connectServer" id="sxi-Lv-Ymq"/>
+                        <segue destination="RSf-h7-nGR" kind="push" id="sQv-5F-sd2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ut9-mV-hHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="-398.05097451274366"/>
+            <point key="canvasLocation" x="943" y="-412"/>
+        </scene>
+        <!--Sphero選択画面-->
+        <scene sceneID="whe-nX-axx">
+            <objects>
+                <viewController storyboardIdentifier="SpheroSelectViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RSf-h7-nGR" customClass="SpheroSelectViewController" customModule="KickTheCan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ai1-OZ-MgC"/>
+                        <viewControllerLayoutGuide type="bottom" id="s8V-4J-JLa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dyh-kl-TsT">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EEf-kq-vMg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xzc-xh-5YW">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" tableViewCell="Xzc-xh-5YW" id="518-qw-cB4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EEf-kq-vMg" firstAttribute="leading" secondItem="dyh-kl-TsT" secondAttribute="leading" id="0li-DW-U0a"/>
+                            <constraint firstItem="EEf-kq-vMg" firstAttribute="top" secondItem="ai1-OZ-MgC" secondAttribute="bottom" id="5KR-R4-HNg"/>
+                            <constraint firstItem="s8V-4J-JLa" firstAttribute="top" secondItem="EEf-kq-vMg" secondAttribute="bottom" id="Iap-M3-Stg"/>
+                            <constraint firstAttribute="trailing" secondItem="EEf-kq-vMg" secondAttribute="trailing" id="NMr-r9-6ck"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sphero選択画面" id="Cpm-Kk-tep">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="IiP-4i-1Dq">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="ReloadDevice:" destination="RSf-h7-nGR" id="SvI-Ua-HLH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="EEf-kq-vMg" id="77J-Tt-Ofe"/>
+                        <segue destination="oPG-WH-H0w" kind="push" id="UOq-WV-ylv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cj9-JX-97a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661.5999999999999" y="-412.44377811094455"/>
         </scene>
         <!--次世代型缶蹴り-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KickTheCan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="KickTheCan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -121,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="-36"/>
+            <point key="canvasLocation" x="3068" y="-412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dx9-0e-ljM">
@@ -145,6 +197,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enU-MI-mlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+        <!--Mio選択画面-->
+        <scene sceneID="rgH-q2-pO0">
+            <objects>
+                <viewController storyboardIdentifier="MioSelectViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oPG-WH-H0w" customClass="MioSelectViewController" customModule="KickTheCan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bqS-IT-Tdg"/>
+                        <viewControllerLayoutGuide type="bottom" id="yge-1H-7JY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cNk-Zj-EYP">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TBq-Iv-iyH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="usf-TB-O2Z">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" tableViewCell="usf-TB-O2Z" id="1aF-qx-bcW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yge-1H-7JY" firstAttribute="top" secondItem="TBq-Iv-iyH" secondAttribute="bottom" id="MsB-iI-Rqj"/>
+                            <constraint firstItem="TBq-Iv-iyH" firstAttribute="leading" secondItem="cNk-Zj-EYP" secondAttribute="leading" id="iuf-KA-kal"/>
+                            <constraint firstAttribute="trailing" secondItem="TBq-Iv-iyH" secondAttribute="trailing" id="ksG-bt-1rd"/>
+                            <constraint firstItem="TBq-Iv-iyH" firstAttribute="top" secondItem="bqS-IT-Tdg" secondAttribute="bottom" id="liK-fy-CHb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mio選択画面" id="gxE-BQ-pAD">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="EXY-6u-vAD">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="ReloadDevice:" destination="oPG-WH-H0w" id="t0A-y3-JfD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="TBq-Iv-iyH" id="9Ws-l9-UCj"/>
+                        <segue destination="BYZ-38-t0r" kind="push" id="VgV-tX-kYG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hgu-fr-EuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2372" y="-411.544227886057"/>
         </scene>
     </scenes>
 </document>
