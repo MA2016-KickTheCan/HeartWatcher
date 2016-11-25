@@ -20,39 +20,73 @@
                         <viewControllerLayoutGuide type="bottom" id="aXw-03-ytU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hAz-r1-BKE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2R-oO-sOs">
-                                <rect key="frame" x="36" y="577" width="303" height="30"/>
+                                <rect key="frame" x="36" y="493" width="303" height="50"/>
                                 <color key="backgroundColor" red="0.28235294117647058" green="0.45882352941176469" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="vrr-OA-Q45"/>
+                                    <constraint firstAttribute="height" constant="50" id="vrr-OA-Q45"/>
                                 </constraints>
                                 <state key="normal" title="サーバへ接続">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="connect2server:" destination="pGP-8E-4mN" eventType="touchUpInside" id="GrD-bM-nKA"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VqU-rW-TYe">
+                                <rect key="frame" x="137.5" y="151.5" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.28235294119999998" green="0.45882352939999999" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="23b-8a-oLF"/>
+                                    <constraint firstAttribute="width" constant="100" id="JM8-ch-bCH"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="サーバを検索しています" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2Z-HC-GkZ">
+                                <rect key="frame" x="36" y="259.5" width="303" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.10378562750000001" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VqU-rW-TYe" firstAttribute="centerY" secondItem="hAz-r1-BKE" secondAttribute="centerY" constant="-100" id="2G4-il-BQ7"/>
+                            <constraint firstItem="I2Z-HC-GkZ" firstAttribute="centerX" secondItem="hAz-r1-BKE" secondAttribute="centerX" id="HOY-2V-geP"/>
                             <constraint firstItem="c2R-oO-sOs" firstAttribute="leading" secondItem="hAz-r1-BKE" secondAttribute="leadingMargin" constant="20" id="TFh-Rg-ytH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I2Z-HC-GkZ" secondAttribute="trailing" constant="20" id="daf-ya-YDb"/>
+                            <constraint firstItem="I2Z-HC-GkZ" firstAttribute="top" secondItem="VqU-rW-TYe" secondAttribute="bottom" constant="8" id="fJG-fK-711"/>
+                            <constraint firstItem="I2Z-HC-GkZ" firstAttribute="leading" secondItem="hAz-r1-BKE" secondAttribute="leadingMargin" constant="20" id="hxp-CE-xbM"/>
                             <constraint firstItem="aXw-03-ytU" firstAttribute="top" secondItem="c2R-oO-sOs" secondAttribute="bottom" constant="60" id="iQN-TL-tMc"/>
+                            <constraint firstItem="VqU-rW-TYe" firstAttribute="centerX" secondItem="hAz-r1-BKE" secondAttribute="centerX" id="oPx-vg-F3a"/>
                             <constraint firstItem="c2R-oO-sOs" firstAttribute="centerX" secondItem="hAz-r1-BKE" secondAttribute="centerX" id="wan-cu-1d1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c2R-oO-sOs" secondAttribute="trailing" constant="20" id="xju-Df-b39"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="次世代型缶蹴り" id="BRu-HD-8AM"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="VqU-rW-TYe" id="pIF-qn-bKe"/>
+                        <outlet property="alertLabel" destination="I2Z-HC-GkZ" id="BJD-kS-92V"/>
                         <segue destination="BYZ-38-t0r" kind="push" identifier="connectServer" id="sxi-Lv-Ymq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ut9-mV-hHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="-398"/>
+            <point key="canvasLocation" x="868" y="-398.05097451274366"/>
         </scene>
         <!--次世代型缶蹴り-->
         <scene sceneID="tne-QT-ifu">
@@ -63,11 +97,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe4-Oq-azR">
-                                <rect key="frame" x="0.0" y="503" width="375" height="104"/>
+                                <rect key="frame" x="0.0" y="439" width="375" height="104"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fe4-Oq-azR" secondAttribute="height" multiplier="375:104" id="XuN-1l-NoN"/>
                                 </constraints>
@@ -92,9 +126,8 @@
         <!--Navigation Controller-->
         <scene sceneID="dx9-0e-ljM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="y6L-Is-Kp6" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y6L-Is-Kp6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="FDZ-VG-AHN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

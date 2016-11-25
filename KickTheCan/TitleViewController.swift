@@ -10,9 +10,13 @@ import UIKit
 
 class TitleViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var alertLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        alertLabel.isHidden = true
+        activityIndicator.isHidden = true
         // Do any additional setup after loading the view.
     }
 
@@ -23,11 +27,24 @@ class TitleViewController: UIViewController {
     
     @IBAction func connect2server(_ sender: Any) {
         //ローディング表示
+        alertLabel.text = "サーバを検索しています"
+        alertLabel.isHidden = false
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
         DeviceModel.sharedInstance.findServer(completion:{ (error) -> Void in
             //ローディング終了
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+
             if error != nil{
                 print(error!)
+                if(error! as! ServerError == ServerError.NotFound){
+                    self.alertLabel.text = "サーバが見つかりませんでした"
+                }else if(error! as! ServerError == ServerError.Unconnect){
+                    self.alertLabel.text = "WiFiに接続してください"
+                }
             }else{
+                self.alertLabel.isHidden = true
                 //サーバに接続完了
                 self.performSegue(withIdentifier: "connectServer", sender: nil)
             }
