@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+import AVFoundation
 class ViewController: UIViewController, MIOControllDelegate {
     var heartView:HeartView!
+    var audioPlayer:AVAudioPlayer!
     @IBOutlet weak var heartrateLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +23,27 @@ class ViewController: UIViewController, MIOControllDelegate {
 
         heartrateLabel.text = "\(0)"
 
+        do {
+            // 音楽ファイルが"sample.mp3"の場合
+            let filePath = Bundle.main.path(forResource: "hito_ge_shinzo06", ofType: "mp3")
+            let audioPath = NSURL(fileURLWithPath: filePath!)
+            audioPlayer = try AVAudioPlayer(contentsOf: audioPath as URL)
+            audioPlayer.prepareToPlay()
+        } catch {
+            print("Error")
+        }
+        
         DeviceModel.sharedInstance.delegate = self
         DeviceModel.sharedInstance.startTracking()
     }
     func trackingHeartrate(heartrate: Int) {
         heartView.heart = heartrate
         heartrateLabel.text = "\(heartrate)"
+        //audioPlayer.play() // 音楽の再生
+        //audioPlayer.stop() // 音楽の停止
+        //audioPlayer.volume //ボリューム
+        //DeviceModel.sharedInstance.moveSphero(angle: , speed: ) //スフィロの移動
+        //DeviceModel.sharedInstance.lightSphero(colorCode: , brightness: ) //スフィロの色
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

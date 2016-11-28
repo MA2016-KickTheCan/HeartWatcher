@@ -19,7 +19,6 @@
 		F77A5F651DDAF3EC0027CFD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77A5F641DDAF3EC0027CFD3 /* Assets.xcassets */; };
 		F77A5F681DDAF3EC0027CFD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77A5F661DDAF3EC0027CFD3 /* LaunchScreen.storyboard */; };
 		F77A5F731DDAF3EC0027CFD3 /* KickTheCanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F721DDAF3EC0027CFD3 /* KickTheCanTests.swift */; };
-		F77A5F7E1DDAF3EC0027CFD3 /* KickTheCanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F7D1DDAF3EC0027CFD3 /* KickTheCanUITests.swift */; };
 		F77A5F8D1DDAF4C00027CFD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F77A5F8C1DDAF4C00027CFD3 /* MapKit.framework */; };
 		F79623901DEBF1BD00452C8C /* hito_ge_shinzo06.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F796238F1DEBF1BD00452C8C /* hito_ge_shinzo06.mp3 */; };
 		F7C0EB081DE8093000D7699F /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0EB071DE8093000D7699F /* TitleViewController.swift */; };
@@ -333,7 +332,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F77A5F7E1DDAF3EC0027CFD3 /* KickTheCanUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
