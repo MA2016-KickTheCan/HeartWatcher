@@ -22,8 +22,14 @@ enum ScopeType : String{
     case Health = "health"
     
 }
+
+protocol MIOControllDelegate {
+    func trackingHeartrate(heartrate:Int)
+}
 class DeviceModel: NSObject {
     var data = DeviceData()
+    var delegate: MIOControllDelegate!
+    var timer:Timer!
     
     class var sharedInstance : DeviceModel {
         struct Singleton {
@@ -123,6 +129,109 @@ class DeviceModel: NSObject {
         }else{
             print("wi-fiに接続されていません")
             completion!(ServerError.Unconnect)
+        }
+    }
+    ///心拍計デバイスのトラッキング開始
+    public func startTracking(){
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.tracking), userInfo: nil, repeats: true)
+        timer.fire()
+    }
+    ///心拍計から一定間隔でトラッキングしてdelegate
+    @objc private func tracking(){
+        if let server = self.data.serverIP {
+            if let MIO = self.data.MioServiceID {
+                let URL = NSURL(string: "\("http://" + server + ":4035/gotapi/health/heartrate?serviceId=" + MIO + "&accessToken=null")")
+                let req = NSURLRequest(url: URL as! URL)
+                let configuration = URLSessionConfiguration.default
+                configuration.timeoutIntervalForRequest = 10
+                configuration.timeoutIntervalForResource = 60
+                
+                let session = URLSession(configuration: configuration, delegate:nil, delegateQueue:OperationQueue.main)
+                
+                let task = session.dataTask(with: req as URLRequest, completionHandler: {
+                    (data, response, error) -> Void in
+                    do {
+                        if (data == nil) {
+                            throw error!
+                        }
+                        let json = try JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions.allowFragments ) as! Dictionary<String, Any>
+                        print(json)
+                        self.delegate.trackingHeartrate(heartrate:json["heartRate"] as! Int)
+                    } catch {
+                        //エラー処理
+                    }
+                })
+                task.resume()
+   
+            }
+        }
+    
+    }
+    ///心拍計デバイスのトラッキング終了
+    public func exitTracking(){
+        timer.invalidate()
+    }
+    
+    ///スフィロを動かす関数
+    ///- parameter angle: 角度[0,360]
+    ///- parameter speed: 速度[0,1]
+    public func moveSphero(angle:Int,speed:Float){
+        if let server = self.data.serverIP {
+            if let Sphero = self.data.SpheroServiceID {
+                let URL = NSURL(string: "\("http://" + server + ":4035/gotapi/drive_controller/move?serviceId=" + Sphero + "&accessToken=null&angle=" + String(angle) + "&speed=" + String(speed))")
+                let req = NSURLRequest(url: URL as! URL)
+                
+                let configuration = URLSessionConfiguration.default
+                configuration.timeoutIntervalForRequest = 10
+                configuration.timeoutIntervalForResource = 60
+                
+                let session = URLSession(configuration: configuration, delegate:nil, delegateQueue:OperationQueue.main)
+                
+                let task = session.dataTask(with: req as URLRequest, completionHandler: {
+                    (data, response, error) -> Void in
+                    do {
+                        if (data == nil) {
+                            throw error!
+                        }
+                    } catch {
+                        //エラー処理
+                    }
+                })
+                task.resume()
+            }
+        }
+    }
+    ///スフィロを光らせる関数
+    ///- parameter colorCode: カラーコードを16進数
+    ///- parameter brightness: 明るさ[0,1]
+    public func lightSphero(colorCode:String,brightness:Int){
+        if let server = self.data.serverIP {
+            if let Sphero = self.data.SpheroServiceID {
+                let color = colorCode.replacingOccurrences(of: "#", with: "")
+                
+                let URL = NSURL(string: "\("http://" + server + ":4035/gotapi/light?serviceId=" + Sphero + "&accessToken=null&lightId=1&name=Sphero%20LED&color=" + color + "&brightness=" + String(brightness))")
+                
+                let req = NSMutableURLRequest(url: URL as! URL)
+                req.httpMethod = "POST"
+                let configuration = URLSessionConfiguration.default
+                configuration.timeoutIntervalForRequest = 10
+                configuration.timeoutIntervalForResource = 60
+                
+                let session = URLSession(configuration: configuration, delegate:nil, delegateQueue:OperationQueue.main)
+                
+                let task = session.dataTask(with: req as URLRequest, completionHandler: {
+                    (data, response, error) -> Void in
+                    do {
+                        if (data == nil) {
+                            throw error!
+                        }
+                    } catch {
+                        //エラー処理
+                    }
+                })
+                task.resume()
+            }
         }
     }
     
