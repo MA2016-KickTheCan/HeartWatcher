@@ -21,6 +21,7 @@
 		F77A5F731DDAF3EC0027CFD3 /* KickTheCanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F721DDAF3EC0027CFD3 /* KickTheCanTests.swift */; };
 		F77A5F7E1DDAF3EC0027CFD3 /* KickTheCanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F7D1DDAF3EC0027CFD3 /* KickTheCanUITests.swift */; };
 		F77A5F8D1DDAF4C00027CFD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F77A5F8C1DDAF4C00027CFD3 /* MapKit.framework */; };
+		F79623901DEBF1BD00452C8C /* hito_ge_shinzo06.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F796238F1DEBF1BD00452C8C /* hito_ge_shinzo06.mp3 */; };
 		F7C0EB081DE8093000D7699F /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0EB071DE8093000D7699F /* TitleViewController.swift */; };
 		F7C0EB0A1DE82C1200D7699F /* SpheroSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0EB091DE82C1200D7699F /* SpheroSelectViewController.swift */; };
 		F7C0EB0C1DE82C1F00D7699F /* MioSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0EB0B1DE82C1F00D7699F /* MioSelectViewController.swift */; };
@@ -65,6 +66,7 @@
 		F77A5F7D1DDAF3EC0027CFD3 /* KickTheCanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickTheCanUITests.swift; sourceTree = "<group>"; };
 		F77A5F7F1DDAF3EC0027CFD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F77A5F8C1DDAF4C00027CFD3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F796238F1DEBF1BD00452C8C /* hito_ge_shinzo06.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hito_ge_shinzo06.mp3; sourceTree = "<group>"; };
 		F7C0EB071DE8093000D7699F /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		F7C0EB091DE82C1200D7699F /* SpheroSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpheroSelectViewController.swift; sourceTree = "<group>"; };
 		F7C0EB0B1DE82C1F00D7699F /* MioSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MioSelectViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				F77A5F661DDAF3EC0027CFD3 /* LaunchScreen.storyboard */,
 				F77A5F691DDAF3EC0027CFD3 /* Info.plist */,
 				F750E1A41DDB578F00A24385 /* heart.png */,
+				F796238F1DEBF1BD00452C8C /* hito_ge_shinzo06.mp3 */,
 			);
 			path = KickTheCan;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				F750E1A51DDB578F00A24385 /* heart.png in Resources */,
 				F77A5F681DDAF3EC0027CFD3 /* LaunchScreen.storyboard in Resources */,
+				F79623901DEBF1BD00452C8C /* hito_ge_shinzo06.mp3 in Resources */,
 				F77A5F651DDAF3EC0027CFD3 /* Assets.xcassets in Resources */,
 				F77A5F631DDAF3EC0027CFD3 /* Main.storyboard in Resources */,
 			);
