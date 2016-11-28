@@ -12,7 +12,7 @@ class HeartView: UIView {
     var spacer:CGFloat = 0.0
     let imageView:UIImageView = UIImageView()
     var esc_transform:CGAffineTransform = CGAffineTransform()
-    
+    var heart:Int!
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         //描画の中心点
@@ -70,11 +70,12 @@ class HeartView: UIView {
         imageView.image = UIImage(named: "heart.png")
         self.addSubview(imageView)
         esc_transform = imageView.transform
+        heart = 0
         let timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         timer.fire()
     }
     func update(tm: Timer) {
-        spacer += 10
+        spacer += CGFloat(heart) / 10
         if spacer >= self.frame.size.width {
             spacer = 0
         }
