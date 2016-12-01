@@ -22,7 +22,7 @@ class UserModel: NSObject {
             data.userRole = role
     }
     ///ユーザロール設定用関数
-    ///- parameter role: 鬼か通常プレイヤーか
+    ///- returns: RoleType
     func getUserRole()->RoleType{
         return data.userRole!
     }
