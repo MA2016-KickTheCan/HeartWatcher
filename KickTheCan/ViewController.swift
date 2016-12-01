@@ -21,7 +21,7 @@ class ViewController: UIViewController, MIOControllDelegate {
         heartView = HeartView(frame: CGRect(x: 0, y: self.view.frame.size.width / 2, width: self.view.frame.size.width, height: self.view.frame.size.width / 2))
         self.view.addSubview(heartView)
 
-        heartrateLabel.text = "\(0)"
+        heartrateLabel.text = ""
 
         do {
             // 音楽ファイルが"sample.mp3"の場合
@@ -33,8 +33,14 @@ class ViewController: UIViewController, MIOControllDelegate {
             print("Error")
         }
         
-        DeviceModel.sharedInstance.delegate = self
-        DeviceModel.sharedInstance.startTracking()
+        if UserModel.sharedInstance.debugMode(flg: nil) {
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
+                self.trackingHeartrate(heartrate: 60)
+            })
+        }else{
+            DeviceModel.sharedInstance.delegate = self
+            DeviceModel.sharedInstance.startTracking()
+        }
     }
     func trackingHeartrate(heartrate: Int) {
         heartView.heart = heartrate

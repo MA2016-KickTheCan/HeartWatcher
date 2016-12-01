@@ -11,6 +11,7 @@ import UIKit
 class MioSelectViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
     @IBOutlet weak var tableView: UITableView!
     var devices = Array<Dictionary<String, String>>()
+    var count = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -35,9 +36,16 @@ class MioSelectViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     @IBAction func ReloadDevice(_ sender: Any) {
         DeviceModel.sharedInstance.findDevice(device: DeviceType.Mio, completion: { (result: Array<Dictionary<String, String>>) in
+            if(UserModel.sharedInstance.debugMode(flg: nil)){ return }
             self.devices = result
             self.tableView.reloadData()
         })
+        count+=1
+        if(count > 2){
+            _ = UserModel.sharedInstance.debugMode(flg: true)
+            self.devices.append(["name":"Mio Fuse","id":""])
+            self.tableView.reloadData()
+        }
 
     }
     

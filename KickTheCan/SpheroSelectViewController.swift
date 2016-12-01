@@ -10,7 +10,7 @@ import UIKit
 
 class SpheroSelectViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-  
+    var count = 0
     var devices = Array<Dictionary<String, String>>()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +35,16 @@ class SpheroSelectViewController: UIViewController,UITableViewDelegate,UITableVi
     
     @IBAction func ReloadDevice(_ sender: Any) {
         DeviceModel.sharedInstance.findDevice(device: DeviceType.Sphero, completion: { (result: Array<Dictionary<String, String>>) in
+            if(UserModel.sharedInstance.debugMode(flg: nil)){ return }
             self.devices = result
             self.tableView.reloadData()
         })
+        count+=1
+        if(count > 2){
+            _ = UserModel.sharedInstance.debugMode(flg: true)
+            self.devices.append(["name":"Sphero 2.0","id":""])
+            self.tableView.reloadData()
+        }
     }
     
     func tableView(_ table: UITableView, didSelectRowAt indexPath:IndexPath) {
