@@ -126,7 +126,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="connect2server:" destination="pGP-8E-4mN" eventType="touchUpInside" id="Qaj-C7-AvW"/>
+                                    <action selector="selectDemon:" destination="Xzn-Wh-haN" eventType="touchUpInside" id="fg8-0Z-oTa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGA-e0-5TV">
@@ -146,7 +146,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="connect2server:" destination="pGP-8E-4mN" eventType="touchUpInside" id="QW5-w3-vsE"/>
+                                    <action selector="selectPlayer:" destination="Xzn-Wh-haN" eventType="touchUpInside" id="sEq-Cu-tkl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqZ-UO-1tQ">
@@ -293,7 +293,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y6L-Is-Kp6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="FDZ-VG-AHN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="FDZ-VG-AHN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.10378562754032596" alpha="1" colorSpace="calibratedWhite"/>
