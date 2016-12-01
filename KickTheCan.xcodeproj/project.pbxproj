@@ -11,6 +11,9 @@
 		F750E19F1DDB3BEB00A24385 /* RadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750E19E1DDB3BEB00A24385 /* RadarView.swift */; };
 		F750E1A31DDB545200A24385 /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750E1A21DDB545200A24385 /* HeartView.swift */; };
 		F750E1A51DDB578F00A24385 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = F750E1A41DDB578F00A24385 /* heart.png */; };
+		F75718C41DEFB09800AA405C /* RoleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75718C31DEFB09800AA405C /* RoleSelectViewController.swift */; };
+		F75718C61DEFC74500AA405C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75718C51DEFC74500AA405C /* UserData.swift */; };
+		F75718C81DEFC76C00AA405C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75718C71DEFC76C00AA405C /* UserModel.swift */; };
 		F75926341DE7FA1C003134BC /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75926331DE7FA1C003134BC /* DeviceData.swift */; };
 		F75926381DE7FB1E003134BC /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75926371DE7FB1E003134BC /* DeviceModel.swift */; };
 		F77A5F5E1DDAF3EC0027CFD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A5F5D1DDAF3EC0027CFD3 /* AppDelegate.swift */; };
@@ -48,6 +51,9 @@
 		F750E19E1DDB3BEB00A24385 /* RadarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarView.swift; sourceTree = "<group>"; };
 		F750E1A21DDB545200A24385 /* HeartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
 		F750E1A41DDB578F00A24385 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		F75718C31DEFB09800AA405C /* RoleSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleSelectViewController.swift; sourceTree = "<group>"; };
+		F75718C51DEFC74500AA405C /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		F75718C71DEFC76C00AA405C /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F75926321DE7E8BC003134BC /* KickTheCan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KickTheCan-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F75926331DE7FA1C003134BC /* DeviceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
 		F75926371DE7FB1E003134BC /* DeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
@@ -127,8 +133,11 @@
 				F77A5F5F1DDAF3EC0027CFD3 /* ViewController.swift */,
 				F7C0EB071DE8093000D7699F /* TitleViewController.swift */,
 				F75926331DE7FA1C003134BC /* DeviceData.swift */,
+				F75718C51DEFC74500AA405C /* UserData.swift */,
+				F75718C71DEFC76C00AA405C /* UserModel.swift */,
 				F75926371DE7FB1E003134BC /* DeviceModel.swift */,
 				F77A5F611DDAF3EC0027CFD3 /* Main.storyboard */,
+				F75718C31DEFB09800AA405C /* RoleSelectViewController.swift */,
 				F7C0EB091DE82C1200D7699F /* SpheroSelectViewController.swift */,
 				F7C0EB0B1DE82C1F00D7699F /* MioSelectViewController.swift */,
 				F750E19E1DDB3BEB00A24385 /* RadarView.swift */,
@@ -308,14 +317,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F75718C41DEFB09800AA405C /* RoleSelectViewController.swift in Sources */,
 				F75926341DE7FA1C003134BC /* DeviceData.swift in Sources */,
 				F7C0EB0C1DE82C1F00D7699F /* MioSelectViewController.swift in Sources */,
 				F75926381DE7FB1E003134BC /* DeviceModel.swift in Sources */,
 				F77A5F601DDAF3EC0027CFD3 /* ViewController.swift in Sources */,
+				F75718C61DEFC74500AA405C /* UserData.swift in Sources */,
 				F7C0EB081DE8093000D7699F /* TitleViewController.swift in Sources */,
 				F750E1A31DDB545200A24385 /* HeartView.swift in Sources */,
 				F750E19F1DDB3BEB00A24385 /* RadarView.swift in Sources */,
 				F7C0EB0A1DE82C1200D7699F /* SpheroSelectViewController.swift in Sources */,
+				F75718C81DEFC76C00AA405C /* UserModel.swift in Sources */,
 				F77A5F5E1DDAF3EC0027CFD3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
