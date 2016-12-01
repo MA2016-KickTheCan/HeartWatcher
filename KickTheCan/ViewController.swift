@@ -11,7 +11,11 @@ import AVFoundation
 class ViewController: UIViewController, MIOControllDelegate {
     var heartView:HeartView!
     var audioPlayer:AVAudioPlayer!
+    var debug_heartrate = 70
+    @IBOutlet weak var debugLeftButton: UIButton!
+    @IBOutlet weak var debugRightButton: UIButton!
     @IBOutlet weak var heartrateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,8 +38,11 @@ class ViewController: UIViewController, MIOControllDelegate {
         }
         
         if UserModel.sharedInstance.debugMode(flg: nil) {
+            debugLeftButton.isHidden = false
+            debugRightButton.isHidden = false
+            
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
-                self.trackingHeartrate(heartrate: 60)
+                self.trackingHeartrate(heartrate: self.debug_heartrate)
             })
         }else{
             DeviceModel.sharedInstance.delegate = self
@@ -50,6 +57,12 @@ class ViewController: UIViewController, MIOControllDelegate {
         //audioPlayer.volume //ボリューム
         //DeviceModel.sharedInstance.moveSphero(angle: , speed: ) //スフィロの移動
         //DeviceModel.sharedInstance.lightSphero(colorCode: , brightness: ) //スフィロの色
+    }
+    @IBAction func upperHeartrate(_ sender: Any) {
+        debug_heartrate+=1
+    }
+    @IBAction func downerHeartrate(_ sender: Any) {
+        debug_heartrate-=1
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -41,7 +41,7 @@ class MioSelectViewController: UIViewController,UITableViewDelegate,UITableViewD
             self.tableView.reloadData()
         })
         count+=1
-        if(count > 2){
+        if(count == 3){
             _ = UserModel.sharedInstance.debugMode(flg: true)
             self.devices.append(["name":"Mio Fuse","id":""])
             self.tableView.reloadData()

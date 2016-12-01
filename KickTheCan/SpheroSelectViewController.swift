@@ -40,7 +40,7 @@ class SpheroSelectViewController: UIViewController,UITableViewDelegate,UITableVi
             self.tableView.reloadData()
         })
         count+=1
-        if(count > 2){
+        if(count == 3){
             _ = UserModel.sharedInstance.debugMode(flg: true)
             self.devices.append(["name":"Sphero 2.0","id":""])
             self.tableView.reloadData()

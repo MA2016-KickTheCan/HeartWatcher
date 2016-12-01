@@ -271,29 +271,52 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIY-eh-T2g">
+                                <rect key="frame" x="0.0" y="612" width="207" height="60"/>
+                                <connections>
+                                    <action selector="downerHeartrate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xcP-b0-dE3"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Baj-LP-D8c">
+                                <rect key="frame" x="207" y="612" width="207" height="60"/>
+                                <connections>
+                                    <action selector="upperHeartrate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Z3-na-IHk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.10378562750000001" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Baj-LP-D8c" secondAttribute="trailing" id="45e-pv-CwI"/>
+                            <constraint firstItem="Baj-LP-D8c" firstAttribute="width" secondItem="JIY-eh-T2g" secondAttribute="width" id="GuX-rf-du3"/>
+                            <constraint firstItem="JIY-eh-T2g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LtK-Qo-1Vk"/>
                             <constraint firstAttribute="trailing" secondItem="Fe4-Oq-azR" secondAttribute="trailing" id="V4U-TC-9xC"/>
                             <constraint firstItem="Fe4-Oq-azR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WE7-I8-OOx"/>
+                            <constraint firstItem="Baj-LP-D8c" firstAttribute="leading" secondItem="JIY-eh-T2g" secondAttribute="trailing" id="XZJ-xO-e0z"/>
+                            <constraint firstItem="JIY-eh-T2g" firstAttribute="top" secondItem="Fe4-Oq-azR" secondAttribute="bottom" id="dT1-O6-jKd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Baj-LP-D8c" secondAttribute="bottom" id="eAJ-iG-kMk"/>
+                            <constraint firstItem="Baj-LP-D8c" firstAttribute="top" secondItem="Fe4-Oq-azR" secondAttribute="bottom" id="vJw-ej-LkY"/>
+                            <constraint firstItem="Baj-LP-D8c" firstAttribute="leading" secondItem="JIY-eh-T2g" secondAttribute="trailing" id="xF5-se-Ta7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JIY-eh-T2g" secondAttribute="bottom" id="yOV-nb-92R"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fe4-Oq-azR" secondAttribute="bottom" constant="60" id="zOQ-Yt-hf6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="次世代型缶蹴り" id="sOv-s3-jgH"/>
                     <connections>
+                        <outlet property="debugLeftButton" destination="JIY-eh-T2g" id="miz-wd-Vx5"/>
+                        <outlet property="debugRightButton" destination="Baj-LP-D8c" id="JX0-kg-16B"/>
                         <outlet property="heartrateLabel" destination="Fe4-Oq-azR" id="7We-h1-3fd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3804" y="-412"/>
+            <point key="canvasLocation" x="3802.898550724638" y="-412.50000000000006"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dx9-0e-ljM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y6L-Is-Kp6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="FDZ-VG-AHN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="FDZ-VG-AHN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.10378562754032596" alpha="1" colorSpace="calibratedWhite"/>
