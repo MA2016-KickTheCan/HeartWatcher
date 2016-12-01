@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="y6L-Is-Kp6">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,11 +20,11 @@
                         <viewControllerLayoutGuide type="bottom" id="aXw-03-ytU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hAz-r1-BKE">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2R-oO-sOs">
-                                <rect key="frame" x="36" y="493" width="303" height="50"/>
+                                <rect key="frame" x="40" y="562" width="334" height="50"/>
                                 <color key="backgroundColor" red="0.28235294117647058" green="0.45882352941176469" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vrr-OA-Q45"/>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VqU-rW-TYe">
-                                <rect key="frame" x="137.5" y="151.5" width="100" height="100"/>
+                                <rect key="frame" x="157" y="186" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.28235294119999998" green="0.45882352939999999" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="23b-8a-oLF"/>
@@ -57,7 +57,7 @@
                                 </userDefinedRuntimeAttributes>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="サーバを検索しています" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2Z-HC-GkZ">
-                                <rect key="frame" x="36" y="259.5" width="303" height="21"/>
+                                <rect key="frame" x="40" y="294" width="334" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -81,12 +81,122 @@
                     <connections>
                         <outlet property="activityIndicator" destination="VqU-rW-TYe" id="pIF-qn-bKe"/>
                         <outlet property="alertLabel" destination="I2Z-HC-GkZ" id="BJD-kS-92V"/>
-                        <segue destination="RSf-h7-nGR" kind="push" id="sQv-5F-sd2"/>
+                        <segue destination="Xzn-Wh-haN" kind="push" id="kCq-En-eXQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ut9-mV-hHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="943" y="-412"/>
+        </scene>
+        <!--ロール選択画面-->
+        <scene sceneID="zHh-9H-slP">
+            <objects>
+                <viewController storyboardIdentifier="RoleSelectViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xzn-Wh-haN" customClass="RoleSelectViewController" customModule="KickTheCan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a3H-R8-p8t"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qz0-bw-clp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="61B-Hs-P0x">
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="プレイヤーロールを選択してください。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKV-pU-XJb">
+                                <rect key="frame" x="20" y="80" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="pE4-iH-HyB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cg5-Ay-DeJ">
+                                <rect key="frame" x="40" y="161" width="334" height="50"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.12278714211420294" blue="0.14049205020360039" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3Do-JR-WkF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="鬼">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="connect2server:" destination="pGP-8E-4mN" eventType="touchUpInside" id="Qaj-C7-AvW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGA-e0-5TV">
+                                <rect key="frame" x="40" y="339" width="334" height="50"/>
+                                <color key="backgroundColor" red="0.28235294119999998" green="0.45882352939999999" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FtZ-0r-ilB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="鬼以外">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="connect2server:" destination="pGP-8E-4mN" eventType="touchUpInside" id="QW5-w3-vsE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqZ-UO-1tQ">
+                                <rect key="frame" x="40" y="219" width="334" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="6fl-yT-7fj"/>
+                                </constraints>
+                                <string key="text">鬼プレイヤーは、隠れたプレイヤーを探し出します。
+プレイヤーを見つけたら、缶(スフィロ)を手に持って、「〇〇みーつけた」と言ってプレイヤーを捕獲します。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鬼以外のプレイヤーは、鬼の目を盗んで、スフィロを手に取ることができれば勝利です。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZz-dw-dD7">
+                                <rect key="frame" x="40" y="397" width="334" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="tQl-z8-AOd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.10378562750000001" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bZz-dw-dD7" firstAttribute="leading" secondItem="Cg5-Ay-DeJ" secondAttribute="leading" id="2df-SB-L5w"/>
+                            <constraint firstItem="bZz-dw-dD7" firstAttribute="trailing" secondItem="Cg5-Ay-DeJ" secondAttribute="trailing" id="2jD-j7-DpT"/>
+                            <constraint firstItem="jGA-e0-5TV" firstAttribute="leading" secondItem="Cg5-Ay-DeJ" secondAttribute="leading" id="63s-JH-XpL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cg5-Ay-DeJ" secondAttribute="trailing" constant="20" id="ATq-So-gnW"/>
+                            <constraint firstItem="nKV-pU-XJb" firstAttribute="leading" secondItem="61B-Hs-P0x" secondAttribute="leadingMargin" id="IcO-Ly-TM7"/>
+                            <constraint firstItem="Cg5-Ay-DeJ" firstAttribute="top" secondItem="nKV-pU-XJb" secondAttribute="bottom" constant="60" id="Icl-LL-ePl"/>
+                            <constraint firstItem="jGA-e0-5TV" firstAttribute="trailing" secondItem="Cg5-Ay-DeJ" secondAttribute="trailing" id="JcV-Ig-rcT"/>
+                            <constraint firstItem="kqZ-UO-1tQ" firstAttribute="leading" secondItem="Cg5-Ay-DeJ" secondAttribute="leading" id="Vv5-V2-Ma6"/>
+                            <constraint firstItem="kqZ-UO-1tQ" firstAttribute="trailing" secondItem="Cg5-Ay-DeJ" secondAttribute="trailing" id="ZJ9-23-Jtd"/>
+                            <constraint firstItem="nKV-pU-XJb" firstAttribute="top" secondItem="a3H-R8-p8t" secondAttribute="bottom" constant="80" id="eBy-mU-IfA"/>
+                            <constraint firstItem="jGA-e0-5TV" firstAttribute="top" secondItem="kqZ-UO-1tQ" secondAttribute="bottom" constant="20" id="gac-pU-3LS"/>
+                            <constraint firstItem="bZz-dw-dD7" firstAttribute="top" secondItem="jGA-e0-5TV" secondAttribute="bottom" constant="8" id="iCP-BP-cgR"/>
+                            <constraint firstItem="nKV-pU-XJb" firstAttribute="trailing" secondItem="61B-Hs-P0x" secondAttribute="trailingMargin" id="nI3-S6-z6m"/>
+                            <constraint firstItem="Cg5-Ay-DeJ" firstAttribute="leading" secondItem="61B-Hs-P0x" secondAttribute="leadingMargin" constant="20" id="wIW-bj-f4V"/>
+                            <constraint firstItem="kqZ-UO-1tQ" firstAttribute="top" secondItem="Cg5-Ay-DeJ" secondAttribute="bottom" constant="8" id="zdZ-gs-Ouv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ロール選択画面" id="Aw6-NM-hPk"/>
+                    <connections>
+                        <segue destination="RSf-h7-nGR" kind="push" id="YX1-Rm-Hc9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Mx-vS-9ft" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1663.7681159420292" y="-413.31521739130437"/>
         </scene>
         <!--Sphero選択画面-->
         <scene sceneID="whe-nX-axx">
@@ -97,18 +207,18 @@
                         <viewControllerLayoutGuide type="bottom" id="s8V-4J-JLa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dyh-kl-TsT">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EEf-kq-vMg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xzc-xh-5YW">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" tableViewCell="Xzc-xh-5YW" id="518-qw-cB4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -138,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cj9-JX-97a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1661.5999999999999" y="-412.44377811094455"/>
+            <point key="canvasLocation" x="2398" y="-412"/>
         </scene>
         <!--次世代型缶蹴り-->
         <scene sceneID="tne-QT-ifu">
@@ -149,11 +259,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe4-Oq-azR">
-                                <rect key="frame" x="0.0" y="439" width="375" height="104"/>
+                                <rect key="frame" x="0.0" y="497.33333333333326" width="414" height="114.66666666666674"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fe4-Oq-azR" secondAttribute="height" multiplier="375:104" id="XuN-1l-NoN"/>
                                 </constraints>
@@ -176,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3068" y="-412"/>
+            <point key="canvasLocation" x="3804" y="-412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dx9-0e-ljM">
@@ -210,18 +320,18 @@
                         <viewControllerLayoutGuide type="bottom" id="yge-1H-7JY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cNk-Zj-EYP">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TBq-Iv-iyH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="usf-TB-O2Z">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" tableViewCell="usf-TB-O2Z" id="1aF-qx-bcW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -251,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgu-fr-EuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2372" y="-411.544227886057"/>
+            <point key="canvasLocation" x="3108" y="-412"/>
         </scene>
     </scenes>
 </document>
