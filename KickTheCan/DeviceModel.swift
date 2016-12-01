@@ -205,7 +205,7 @@ class DeviceModel: NSObject {
     ///スフィロを光らせる関数
     ///- parameter colorCode: カラーコードを16進数
     ///- parameter brightness: 明るさ[0,1]
-    public func lightSphero(colorCode:String,brightness:Int){
+    public func lightSphero(colorCode:String,brightness:Float){
         if let server = self.data.serverIP {
             if let Sphero = self.data.SpheroServiceID {
                 let color = colorCode.replacingOccurrences(of: "#", with: "")

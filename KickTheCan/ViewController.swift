@@ -12,6 +12,7 @@ class ViewController: UIViewController, MIOControllDelegate {
     var heartView:HeartView!
     var audioPlayer:AVAudioPlayer!
     var debug_heartrate = 70
+    var isExciting = false
     @IBOutlet weak var debugLeftButton: UIButton!
     @IBOutlet weak var debugRightButton: UIButton!
     @IBOutlet weak var heartrateLabel: UILabel!
@@ -52,11 +53,23 @@ class ViewController: UIViewController, MIOControllDelegate {
     func trackingHeartrate(heartrate: Int) {
         heartView.heart = heartrate
         heartrateLabel.text = "\(heartrate)"
-        //audioPlayer.play() // 音楽の再生
-        //audioPlayer.stop() // 音楽の停止
-        //audioPlayer.volume //ボリューム
-        //DeviceModel.sharedInstance.moveSphero(angle: , speed: ) //スフィロの移動
-        //DeviceModel.sharedInstance.lightSphero(colorCode: , brightness: ) //スフィロの色
+        if(heartrate >= 90 && isExciting == false){
+            isExciting = true
+            audioPlayer.play()
+            audioPlayer.volume = 0.1
+            DeviceModel.sharedInstance.moveSphero(angle:Int(arc4random() % 360) , speed: 0.5) //スフィロの移動
+            let colorCode = ["FF0000","00FF00","0000FF"]
+            let colorNumber:Int = Int(arc4random() % UInt32(colorCode.count))
+            DeviceModel.sharedInstance.lightSphero(colorCode:colorCode[colorNumber] , brightness:1.0) //スフィロの色
+        }
+        if(heartrate < 90 && isExciting == true){
+            isExciting = false
+            audioPlayer.stop()
+        }
+        
+        if(isExciting){
+            audioPlayer.volume = min(Float((heartrate - 90) / 30),1.0)
+        }
     }
     @IBAction func upperHeartrate(_ sender: Any) {
         debug_heartrate+=1
