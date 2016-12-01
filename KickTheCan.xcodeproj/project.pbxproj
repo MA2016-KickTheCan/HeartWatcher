@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F730F1F11DF01610008D35DC /* heartbeat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F730F1F01DF01610008D35DC /* heartbeat.mp4 */; };
 		F750E1971DDAFC4700A24385 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F750E1961DDAFC4700A24385 /* CoreLocation.framework */; };
 		F750E19F1DDB3BEB00A24385 /* RadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750E19E1DDB3BEB00A24385 /* RadarView.swift */; };
 		F750E1A31DDB545200A24385 /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750E1A21DDB545200A24385 /* HeartView.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F730F1F01DF01610008D35DC /* heartbeat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = heartbeat.mp4; sourceTree = "<group>"; };
 		F750E1961DDAFC4700A24385 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F750E19E1DDB3BEB00A24385 /* RadarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarView.swift; sourceTree = "<group>"; };
 		F750E1A21DDB545200A24385 /* HeartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				F77A5F661DDAF3EC0027CFD3 /* LaunchScreen.storyboard */,
 				F77A5F691DDAF3EC0027CFD3 /* Info.plist */,
 				F750E1A41DDB578F00A24385 /* heart.png */,
+				F730F1F01DF01610008D35DC /* heartbeat.mp4 */,
 				F796238F1DEBF1BD00452C8C /* hito_ge_shinzo06.mp3 */,
 			);
 			path = KickTheCan;
@@ -290,6 +293,7 @@
 			files = (
 				F750E1A51DDB578F00A24385 /* heart.png in Resources */,
 				F77A5F681DDAF3EC0027CFD3 /* LaunchScreen.storyboard in Resources */,
+				F730F1F11DF01610008D35DC /* heartbeat.mp4 in Resources */,
 				F79623901DEBF1BD00452C8C /* hito_ge_shinzo06.mp3 in Resources */,
 				F77A5F651DDAF3EC0027CFD3 /* Assets.xcassets in Resources */,
 				F77A5F631DDAF3EC0027CFD3 /* Main.storyboard in Resources */,
@@ -479,6 +483,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DEQGLB9PU4;
 				INFOPLIST_FILE = KickTheCan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.natmark.KickTheCan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -493,6 +498,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DEQGLB9PU4;
 				INFOPLIST_FILE = KickTheCan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.natmark.KickTheCan;
 				PRODUCT_NAME = "$(TARGET_NAME)";

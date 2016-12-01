@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -283,10 +282,30 @@
                                     <action selector="upperHeartrate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Z3-na-IHk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfr-he-ZHi">
+                                <rect key="frame" x="107" y="236" width="200" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="9UI-vC-brQ"/>
+                                    <constraint firstAttribute="width" constant="200" id="Hom-jo-gyS"/>
+                                </constraints>
+                                <state key="normal" title="スフィロを動かす"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="spheroMover:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1DY-MT-1bp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.10378562750000001" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xfr-he-ZHi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2hE-fK-Mcs"/>
                             <constraint firstAttribute="trailing" secondItem="Baj-LP-D8c" secondAttribute="trailing" id="45e-pv-CwI"/>
+                            <constraint firstItem="xfr-he-ZHi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4dv-aI-c6D"/>
                             <constraint firstItem="Baj-LP-D8c" firstAttribute="width" secondItem="JIY-eh-T2g" secondAttribute="width" id="GuX-rf-du3"/>
                             <constraint firstItem="JIY-eh-T2g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LtK-Qo-1Vk"/>
                             <constraint firstAttribute="trailing" secondItem="Fe4-Oq-azR" secondAttribute="trailing" id="V4U-TC-9xC"/>
@@ -304,7 +323,8 @@
                     <connections>
                         <outlet property="debugLeftButton" destination="JIY-eh-T2g" id="miz-wd-Vx5"/>
                         <outlet property="debugRightButton" destination="Baj-LP-D8c" id="JX0-kg-16B"/>
-                        <outlet property="heartrateLabel" destination="Fe4-Oq-azR" id="7We-h1-3fd"/>
+                        <outlet property="heartrateLabel" destination="Fe4-Oq-azR" id="pTD-zV-Vg0"/>
+                        <outlet property="spheroButton" destination="xfr-he-ZHi" id="NWp-h0-haX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
