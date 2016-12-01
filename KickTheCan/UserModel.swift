@@ -26,5 +26,13 @@ class UserModel: NSObject {
     func getUserRole()->RoleType{
         return data.userRole!
     }
+    ///ユーザロール設定用関数
+    ///- parameter flg: デバッグ用かどうか
+    func debugMode(flg : Bool?) -> Bool{
+        if let flg = flg{
+            data.debugMode = flg
+        }
+        return data.debugMode
+    }
 
 }

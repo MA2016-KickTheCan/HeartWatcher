@@ -13,6 +13,7 @@ enum RoleType{
 }
 class UserData: NSObject {
     var userRole : RoleType? = nil
+    var debugMode : Bool! = false
     
     override init() {
         super.init()
