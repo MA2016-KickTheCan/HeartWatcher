@@ -30,7 +30,7 @@ class RoleSelectViewController: UIViewController {
     @IBAction func selectDemon(_ sender: Any) {
         UserModel.sharedInstance.setUserRole(role: RoleType.Demon)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.navigationController?.pushViewController(storyboard.instantiateViewController(withIdentifier: "MioSelectViewController"), animated: true)
+        self.navigationController?.pushViewController(storyboard.instantiateViewController(withIdentifier: "SpheroSelectViewController"), animated: true)
     }
     /*
     // MARK: - Navigation

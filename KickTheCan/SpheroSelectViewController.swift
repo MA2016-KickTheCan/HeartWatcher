@@ -50,7 +50,11 @@ class SpheroSelectViewController: UIViewController,UITableViewDelegate,UITableVi
     func tableView(_ table: UITableView, didSelectRowAt indexPath:IndexPath) {
         DeviceModel.sharedInstance.setDevice(device: DeviceType.Sphero, serviceId: devices[indexPath.row]["id"]!)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.navigationController?.pushViewController(storyboard.instantiateViewController(withIdentifier: "MioSelectViewController"), animated: true)
+        if UserModel.sharedInstance.getUserRole() == RoleType.Demon {
+            self.navigationController?.pushViewController(storyboard.instantiateViewController(withIdentifier: "GameViewController"), animated: true)
+        }else{
+            self.navigationController?.pushViewController(storyboard.instantiateViewController(withIdentifier: "MioSelectViewController"), animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
